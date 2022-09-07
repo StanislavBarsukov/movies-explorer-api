@@ -1,0 +1,21 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanislavBarsukov/movies-explorer-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StanislavBarsukov/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/StanislavBarsukov/movies-explorer-api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
