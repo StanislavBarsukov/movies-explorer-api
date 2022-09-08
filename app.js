@@ -7,12 +7,12 @@ const { errors } = require('celebrate');
 const { routes } = require('./routes/index');
 const { errorHandler } = require('./error/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { mongoDb } = require('./utils/const');
 const { limiter } = require('./middlewares/express-rate-limit');
 
 const app = express();
-const { PORT = 3000 } = process.env;
-mongoose.connect(mongoDb);
+const { PORT = 3000, mongoDB = 'mongodb://127.0.0.1:27017/moviesdb' } = process.env;
+mongoose.connect(mongoDB);
+
 app.use(limiter);
 app.use(helmet());
 app.use(cors());
