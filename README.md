@@ -4,5 +4,5 @@
 ### 2. https://api.movies.collection.nomoredomains.sbs/
 
 ##  Необходимое для входа на сервер
-### bender@178.154.200.245
+### ssh bender@178.154.200.245
 
