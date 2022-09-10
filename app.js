@@ -13,11 +13,11 @@ const app = express();
 const { PORT = 3000, mongoDB = 'mongodb://127.0.0.1:27017/moviesdb' } = process.env;
 mongoose.connect(mongoDB);
 
+app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use(requestLogger);
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());

@@ -43,6 +43,10 @@ exports.updateUser = async (req, res, next) => {
       next(new BadRequestError(messageErrorUser.BAD_REQUEST_USER));
       return;
     }
+    if (error.code === 11000) {
+      next(new ConflictError(messageErrorUser.EMAIL_CONFLICT));
+      return;
+    }
     next(error);
   }
 };

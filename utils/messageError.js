@@ -8,6 +8,7 @@ const messageErrorUser = {
   BAD_REQUEST_USER: 'Переданы некорректные данные.',
   BAD_CONFLICT: 'Пользователь с таким e-mail уже зарегестрирован',
   UNAUTHORIZED_USER: 'Указанные e-mail и пароль не верны',
+  EMAIL_CONFLICT: 'Такой e-mail уже используется',
 };
 const messageErrorMovie = {
   BAD_REQUEST_MOVIE: 'Переданы некорректные данные.',

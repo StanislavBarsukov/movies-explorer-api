@@ -15,7 +15,7 @@ routes.post('/signup', signUp, createUser);
 routes.use('/users', auth, users);
 routes.use('/movies', auth, movies);
 
-routes.all('*', (req, res, next) => {
+routes.all('*', auth, (req, res, next) => {
   next(new NotFoundError(messageError.NOT_FOUND_ERROR));
 });
 

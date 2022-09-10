@@ -1,4 +1,5 @@
 const { celebrate, Joi } = require('celebrate');
+const { validate } = require('../utils/checkUrl');
 
 const signIn = celebrate({
   body: Joi.object().keys({
@@ -11,7 +12,7 @@ const signUp = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
-    name: Joi.string().min(2).max(30),
+    name: Joi.string().required().min(2).max(30),
   }),
 });
 
@@ -29,9 +30,9 @@ const saveMovieJoi = celebrate({
     duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required().uri(),
-    trailerLink: Joi.string().required().uri(),
-    thumbnail: Joi.string().required().uri(),
+    image: Joi.string().required().custom(validate),
+    trailerLink: Joi.string().required().custom(validate),
+    thumbnail: Joi.string().required().custom(validate),
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
@@ -40,7 +41,7 @@ const saveMovieJoi = celebrate({
 
 const deleteMovieJoi = celebrate({
   params: Joi.object().keys({
-    id: Joi.string().required().alphanum().length(24),
+    id: Joi.string().required().hex().length(24),
   }),
 });
 
